@@ -1,0 +1,18 @@
+[package]
+name = "pelt"
+version = "0.1.0"
+edition = "2021"
+license = "MPL-2.0"
+description = "SVG 'pelt' skins as a UI appearance layer — theme tokens, state variants, 9-slice, animation. Rendered via resvg; composite in any GPU scene (Vello)."
+repository = "https://github.com/kenter-bank/pelt"
+
+# Core render is CPU (usvg + resvg); the host composites the
+# resulting RGBA into its GPU surface (e.g. Vello) for a clean per-frame loop.
+
+[dependencies]
+usvg = "0.46"
+resvg = "0.46"
+thiserror = "2"
+
+[dev-dependencies]
+# (tests use resvg::tiny_skia for PNG encoding — no extra dep)
